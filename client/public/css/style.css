@@ -1,0 +1,89 @@
+/*Global css*/
+
+html {
+  position: relative;
+}
+
+body {
+  font-family: 'Raleway', sans-serif;
+  background: #0B3C5D url(../../images/swirl_pattern.jpeg) repeat fixed center;
+  /* width: 100%; */
+  min-height: 400px;
+  margin-bottom: 100px;
+  clear: both;
+  color: #eee;
+}
+
+a {
+  color: #328CC1;
+}
+
+/* Main Sections */
+.col-sm-10 {
+  background-color: #0B3C5D;
+  margin: 30px 30px;
+  padding: 15px 5px;
+  -webkit-animation: mymove 1s 1;
+  animation: mymove 1s 1;
+}
+
+@-webkit-keyframes mymove {
+  from   {left: 400px;}
+  to  {left: 0px;}
+}
+@keyframes mymove {
+    from   {left: 400px;}
+    to {left: 0px;}
+}
+
+/*Media Queries*/
+
+@media only screen and (max-width: 992px) {
+
+  .col-sm-6 {
+    max-width: 100%;
+    }
+
+    .col-sm-3 {
+    padding: 10px 00;
+    margin: 30px auto;
+    width: 30%;
+  }
+
+
+}
+@media only screen and (max-width: 769px) {
+
+  .col-sm-6 {
+    max-width: 80%;
+    }
+
+    .col-sm-3 {
+    padding: 10px 00;
+    margin: 30px;
+    width: 80%;
+    margin-bottom: 70px;
+  }
+/*
+  .icon {
+    width: 10%;
+  } */
+
+
+}
+
+@media only screen and (max-width: 480px){
+
+  body {
+      margin-bottom: 200px;
+  }
+
+  .navbar {
+    background-color: #0B3C5D;
+  }
+
+  h4 {
+    font-size: 1em;
+  }
+
+}

@@ -4,6 +4,7 @@ import Nav from "./components/Nav";
 import About from "./pages/About";
 import Portfolio from "./pages/Portfolio";
 import Contact from "./pages/Contact";
+import Footer from "./components/Footer";
 
 const App = () => (
   <Router>
@@ -14,6 +15,7 @@ const App = () => (
         <Route exact path="/portfolio" component={Portfolio} />
         <Route exact path="/contact" component={Contact} />
       </Switch>
+      <Footer />
     </div>
   </Router>
 )
