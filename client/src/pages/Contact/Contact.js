@@ -64,8 +64,8 @@ class Contact extends Component {
   render() {
     return (
       <section>
-            <div className="col-sm-10 col-sm-offset-1 col-xs-12">
-                <h2>Contact<i className="fa fa-address-book" aria-hidden="true"></i></h2>
+            <div className="row well well-lg">
+                <h2>Contact</h2>
                 <form>
                   Name:
                   <br/>

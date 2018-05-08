@@ -1473,6 +1473,10 @@ rc@^1.0.1, rc@^1.1.6, rc@^1.1.7:
     minimist "^1.2.0"
     strip-json-comments "~2.0.1"
 
+react-parallax@^1.7.0:
+  version "1.7.0"
+  resolved "https://registry.yarnpkg.com/react-parallax/-/react-parallax-1.7.0.tgz#0f7e1a997cd78e517bda45536cbefea48891c5bf"
+
 readable-stream@2.2.7:
   version "2.2.7"
   resolved "https://registry.yarnpkg.com/readable-stream/-/readable-stream-2.2.7.tgz#07057acbe2467b22042d36f98c5ad507054e95b1"

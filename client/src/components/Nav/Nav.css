@@ -1,6 +1,6 @@
 /*Header css*/
-
 .navbar {
+  /* height: 150px; */
   -webkit-animation-name: toblue;
   -webkit-animation-duration: 6.5s;
   animation-name: toblue;
@@ -12,15 +12,18 @@
   animation-timing-function: ease-out;
 }
 
+li {
+  margin: 0 5px;
+}
+
+
 @-webkit-keyframes toblue {
   from {background-color: #1D2731;}
   to {background-color: #328CC1;}}
 
-.navbar-brand {
 
-  /* text-align: left;
-  width: 110%; */
-  /* height: 80px; */
+.navbar-brand {
+  max-height: 100%;
   font-family: 'Raleway', sans-serif;
   font-size: 2.5em;
   color: #eee;
@@ -55,9 +58,11 @@ li>a>img:first-child {
   /* padding-left: 50px; */
 }
 
+.fab {
+  /* font-size: em; */
+}
 
-
-.icon {
+/* .icon {
   height: 40px;
   width: 40px;
   -webkit-transition: all 1.0s ease;
@@ -67,4 +72,4 @@ li>a>img:first-child {
 .icon:hover {
   -webkit-transform:scale(1.25);
           transform:scale(1.25);
-}
+} */
