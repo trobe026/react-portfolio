@@ -19,7 +19,7 @@ a {
 }
 
 /* Main Sections */
-.col-sm-10 {
+.row {
   background-color: #0B3C5D;
   margin: 30px 30px;
   padding: 15px 5px;

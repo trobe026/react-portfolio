@@ -6,7 +6,6 @@ class Portfolio extends Component {
   render() {
     return (
       <section>
-          <div className="container-fluid">
             <div className="col-sm-10 col-sm-offset-1 col-xs-12">
                 <section>
                   <h2>Portfolio<i className="fa fa-briefcase" aria-hidden="true"></i></h2>
@@ -32,7 +31,6 @@ class Portfolio extends Component {
                   </div>
                   </section>
                 </div>
-            </div>
           </section>
     );
   }

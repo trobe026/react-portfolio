@@ -2,11 +2,11 @@
 
 .navbar {
   -webkit-animation-name: toblue;
-  -webkit-animation-duration: 7s;
+  -webkit-animation-duration: 6.5s;
   animation-name: toblue;
   animation-duration: 7s;
   background-color: #1D2731;
-  animation-iteration-count: 8;
+  animation-iteration-count: 999;
   animation-delay: 2s;
   animation-direction: alternate;
   animation-timing-function: ease-out;
