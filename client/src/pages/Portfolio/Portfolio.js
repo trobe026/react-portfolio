@@ -1,40 +1,36 @@
 import React, { Component } from "react";
+import PROJECTS from '../../data/items.js';
+import Feed from '../../components/Feed/Feed.jsx'
+import store from '../../redux/store'
+import { renderModal } from '../../redux/actions'
 import './Portfolio.css';
 
-class Portfolio extends Component {
-
-  render() {
-    return (
-      <section>
-            <div className="row well well-lg">
-                <section>
-                  <h2>Portfolio</h2>
-                  <div className="img">
-                    <a href="https://github.com/trobe026/ATXNewScraper" target = '_blank' rel="noopener noreferrer"><img className="img-thumbnail" src="images/atxnews.jpeg" alt="Games"/></a>
-                    <h4>MongoDB News Scraper</h4>
-                  </div>
-                  <div className="img">
-                    <a href="https://public-brewery-app.herokuapp.com/" target = '_blank' rel="noopener noreferrer"><img className="img-thumbnail" src="images/public.jpeg" alt="Brew Explorer"/></a>
-                    <h4>Brewery Explorer</h4>
-                  </div>
-                  <div className="img">
-                    <a href="https://github.com/trobe026/InstruMemory" target = '_blank' rel="noopener noreferrer"><img className="img-thumbnail" src="images/instrumemory.jpeg" alt="Apps"/></a>
-                    <h4>InstruMemory</h4>
-                  </div>
-                  <div className="img">
-                    <a href="https://friend-finder-app-tr.herokuapp.com/" target = '_blank' rel="noopener noreferrer"><img className="img-thumbnail" src="images/ff.jpeg" alt="FriendFinder"/></a>
-                    <h4>Friend Finder</h4>
-                  </div>
-                  <div className="img">
-                    <a href="https://github.com/trobe026/Roost" target = '_blank' rel="noopener noreferrer"><img className="img-thumbnail" src="images/Roost.jpeg"  alt="Roost"/></a>
-                    <h4>Roost</h4>
-                  </div>
-                  </section>
-                </div>
-          </section>
-    );
+export default class Portfolio extends Component {
+  constructor(props) {
+    super(props)
+    this.state = store.getState().modalContent
   }
 
+  componentDidMount() {
+  this.unsubscribe = store.subscribe(() => {
+    this.setState(store.getState().modalContent)
+  })
 }
 
-export default Portfolio;
+componentWillUnmount() {
+  this.unsubscribe()
+}
+
+render() {
+  return (
+    <section>
+      <div className="row well well-lg">
+              <section>
+                <Feed items={PROJECTS} name="Portfolio" renderModal={renderModal}
+                 />
+                </section>
+              </div>
+      </section>
+    );
+  }
+}
