@@ -18,8 +18,8 @@ p {
 
 
 @media(min-width: 992px) {
-  .col-md-6:first-child {
-    border-right: 1px groove #328CC1;
+  .col-md-6:last-child {
+    border-left: 1px groove #328CC1;
   }
 }
 
@@ -31,9 +31,9 @@ p {
 
 @media(min-width: 1105px) {
   #profile-pic {
-    width: 445px;
-    height: 335px;
-    margin: 40px auto 0 auto;
+    width: 532px;
+    height: 400px;
+    margin: 20px auto 20px auto;
   }
 }
 

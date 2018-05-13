@@ -12,5 +12,13 @@ textarea {
   margin-top: 15px;
   color: #111;
   width: 95%;
+}
 
+.fa-envelope {
+  margin-left: 5px;
+}
+
+.contact {
+  width: 60%;
+  margin: 60px auto;
 }

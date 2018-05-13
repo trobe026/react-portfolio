@@ -1,4 +1,4 @@
-import './loading-item.scss'
+import './loading-item.css'
 import React from 'react'
 import ReactCSSTransitionGroup from 'react-addons-css-transition-group'
 import img from './loading-item.png';

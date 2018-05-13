@@ -1,5 +1,14 @@
 import React, { Component } from "react";
 import './Contact.css';
+import { Redirect } from 'react-router'
+import AWS from 'aws-sdk';
+
+
+// Initialize the Amazon Cognito credentials provider
+AWS.config.region = 'us-west-2'; // Region
+AWS.config.credentials = new AWS.CognitoIdentityCredentials({
+  IdentityPoolId: 'us-west-2:1b04bd4b-cdb1-4055-a773-70ff0d6a604d',
+});
 
 export default class Contact extends Component {
   constructor(props) {
@@ -8,9 +17,26 @@ export default class Contact extends Component {
       namevalue: 'i.e. John Smith',
       emailvalue: 'example@gmail.com',
       messagevalue: 'Type your message here...',
-      blankvalue: ''
+      counter: 0,
+      LPAWS: {},
+      redirect: false
     };
   }
+
+  sendToTopic = function() {
+      var sns = new AWS.SNS();
+      var params = {
+          //Message: 'Hello topic', /* required */
+          Message: 'Sender: ' + this.state.namevalue + '\n' + 'Email: ' +  this.state.emailvalue + '\n' + 'Message: ' + this.state.messagevalue,
+          Subject: 'New Message from Portfolio!',
+          TopicArn: 'arn:aws:sns:us-west-2:101283745392:Portfolio_Contact_Form'
+      };
+      sns.publish(params, function(err, data) {
+          if (err) console.log(err, err.stack); // an error occurred
+          else     console.log(data);
+                    // successful this.setresponse
+      });
+  };
 
   onBlurn(e) {
     if (e.target.placeholder === '') {
@@ -21,7 +47,7 @@ export default class Contact extends Component {
   }
 
   onFocusn(e) {
-    if (e.target.placeholder === this.state.namevalue) {
+    if (e.target.placeholder === this.state.namevalue && this.state.counter < 1) {
       this.setState({
         namevalue: ''
       });
@@ -38,7 +64,7 @@ export default class Contact extends Component {
   }
 
   onFocuse(e) {
-    if (e.target.placeholder === this.state.emailvalue) {
+    if (e.target.placeholder === this.state.emailvalue && this.state.counter < 1) {
       this.setState({
         emailvalue: ''
       });
@@ -46,7 +72,9 @@ export default class Contact extends Component {
   }
 
   onBlurm(e) {
+      console.log(this.state)
     if (e.target.placeholder === '') {
+      console.log('test')
       this.setState({
         messagevalue: 'Type your message here...'
       });
@@ -54,17 +82,42 @@ export default class Contact extends Component {
   }
 
   onFocusm(e) {
-    if (e.target.placeholder === this.state.messagevalue) {
+    if (e.target.placeholder === this.state.messagevalue && this.state.counter < 1) {
       this.setState({
         messagevalue: ''
       });
     }
   }
 
+  handleInputChangeName(e) {
+
+    const msg = e.target.value;
+    this.setState({
+      namevalue: msg,
+      counter: 1
+    });
+  };
+
+  handleInputChangeEmail(e) {
+    const msg = e.target.value;
+    this.setState({
+      emailvalue: msg,
+      counter: 1
+    });
+  };
+
+  handleInputChangeMessage(e) {
+    const msg = e.target.value;
+    this.setState({
+      messagevalue: msg,
+      counter: 1
+    });
+  };
+
   render() {
     return (
       <section>
-            <div className="row well well-lg">
+            <div className="row well well-lg contact">
                 <h2>Contact</h2>
                 <form>
                   Name:
@@ -73,7 +126,8 @@ export default class Contact extends Component {
                     type="text"
                     onFocus={this.onFocusn.bind(this)}
                     onBlur={this.onBlurn.bind(this)}
-                    placeholder={this.state.namevalue}/>
+                    placeholder={this.state.namevalue}
+                    onChange={this.handleInputChangeName.bind(this)}/>
                   <br/>
                   Email:
                   <br/>
@@ -81,7 +135,8 @@ export default class Contact extends Component {
                     type="text"
                     onFocus={this.onFocuse.bind(this)}
                     onBlur={this.onBlure.bind(this)}
-                    placeholder={this.state.emailvalue}/>
+                    placeholder={this.state.emailvalue}
+                    onChange={this.handleInputChangeEmail.bind(this)}/>
                   <br/>
                   Message:
                   <br/>
@@ -90,13 +145,15 @@ export default class Contact extends Component {
                     onFocus={this.onFocusm.bind(this)}
                     onBlur={this.onBlurm.bind(this)}
                     rows="4"
-                    placeholder={this.state.messagevalue}>
+                    placeholder={this.state.messagevalue}
+                    onChange={this.handleInputChangeMessage.bind(this)}>
                   </textarea>
                 </form>
-                <a href="/nowhere"><input className="btn btn-primary" type="submit"/></a>
+                <a href='/thanks'>
+                  <button className="btn btn-primary"  type="submit" onClick={() => this.sendToTopic()}>Send <i className="fa fa-envelope" aria-hidden="true"></i></button>
+                </a>
               </div>
           </section>
-    );
-  }
-
-}
+        );
+      }
+    }

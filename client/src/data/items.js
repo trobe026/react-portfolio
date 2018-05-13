@@ -1,9 +1,9 @@
 const PROJECTS = [
   {
-    name: 'Roost',
+    name: 'Roost Apartment Finder',
     path: 'images/Roost.jpeg',
     href: 'https://github.com/trobe026/Roost',
-    alt: "Roost"
+    alt: "Roost Apartment Finder"
   },
   {
     name: 'MongoDB News Scraper',

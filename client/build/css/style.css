@@ -5,10 +5,6 @@ html, body {
   position: relative;
   font-family: 'Raleway', sans-serif;
   background: #0B3C5D url(../../images/swirl_pattern.jpeg) repeat fixed center;
-  /* width: 100%; */
-  /* min-height: 400px; */
-  /* margin-bottom: 100px; */
-  /* clear: both; */
   color: #eee;
 }
 
@@ -34,6 +30,8 @@ a {
   padding: 15px 5px;
   -webkit-animation: mymove 1s 1;
   animation: mymove 1s 1;
+  max-width: 1400px;
+  margin: 60px auto;
 }
 
 @-webkit-keyframes mymove {

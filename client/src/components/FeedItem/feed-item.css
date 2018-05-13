@@ -12,13 +12,13 @@ h4 {
 .img {
   display: inline-block;
   position: relative;
-  margin: 20px;
+  margin: 30px;
 }
 
 .img-thumbnail {
   /* 3:2 ratio */
-  width:  525px;
-  height: 350px;
+  width:  375px;
+  height: 250px;
 }
 
 .img:hover {
