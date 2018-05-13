@@ -1,7 +1,7 @@
 const PROJECTS = [
   {
     name: 'Roost Apartment Finder',
-    path: 'images/Roost.jpeg',
+    path: 'images/roost.jpeg',
     href: 'https://github.com/trobe026/Roost',
     alt: "Roost Apartment Finder"
   },

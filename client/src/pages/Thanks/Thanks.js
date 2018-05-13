@@ -17,7 +17,7 @@ export default class Thanks extends Component {
         this.setState({
           redirect: true
         });
-      }.bind(this), 3000
+      }.bind(this), 2300
     );
   }
 

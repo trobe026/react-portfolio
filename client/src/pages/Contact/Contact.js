@@ -35,7 +35,10 @@ export default class Contact extends Component {
           if (err) console.log(err, err.stack); // an error occurred
           else     console.log(data);
                     // successful this.setresponse
-      });
+                    this.setState({
+                      redirect: true
+                    })
+      }.bind(this));
   };
 
   onBlurn(e) {
@@ -115,6 +118,11 @@ export default class Contact extends Component {
   };
 
   render() {
+    if (this.state.redirect) {
+      return (
+        <Redirect to='/thanks'/>
+      )
+    }
     return (
       <section>
             <div className="row well well-lg contact">
@@ -149,9 +157,9 @@ export default class Contact extends Component {
                     onChange={this.handleInputChangeMessage.bind(this)}>
                   </textarea>
                 </form>
-                <a href='/thanks'>
+
                   <button className="btn btn-primary"  type="submit" onClick={() => this.sendToTopic()}>Send <i className="fa fa-envelope" aria-hidden="true"></i></button>
-                </a>
+
               </div>
           </section>
         );
