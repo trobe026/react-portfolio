@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import './Thanks.css';
-import { Redirect } from 'react-router'
+import { Redirect } from 'react-router-dom'
 
 export default class Thanks extends Component {
   constructor(props) {

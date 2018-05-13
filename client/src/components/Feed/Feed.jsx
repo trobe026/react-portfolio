@@ -29,7 +29,6 @@ export default class Feed extends Component {
     return (
       <div>
         <h2>{this.props.name}</h2>
-        {console.log(this.props.items)}
         {this.state.loadedItems.map((item, i) =>
           <FeedItem
             path={item.path}

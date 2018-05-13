@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import './Contact.css';
-import { Redirect } from 'react-router'
+import { Redirect } from 'react-router-dom'
 import AWS from 'aws-sdk';
 
 

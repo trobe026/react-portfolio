@@ -13,10 +13,10 @@ const App = () => (
       <Nav />
       <div className='container-fluid'>
       <Switch>
-        <Route exact path="/" component={About} />
+        <Route exact path={"/"} component={About} />
         <Route exact path="/portfolio" component={Portfolio} />
         <Route exact path="/contact" component={Contact} />
-        <Route exact path="/thanks" component={Thanks} />
+        <Route exact path={"/thanks"} component={Thanks} />
       </Switch>
       </div>
       <Footer />
