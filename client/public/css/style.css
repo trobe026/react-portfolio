@@ -26,21 +26,23 @@ a {
 }
 .row {
   background-color: #0B3C5D;
-  margin: 30px 30px;
   padding: 15px 5px;
-  -webkit-animation: mymove 1s 1;
-  animation: mymove 1s 1;
   max-width: 1400px;
   margin: 60px auto;
 }
 
+.col-md-12 {
+  -webkit-animation: mymove 1s 1;
+  animation: mymove 1s 1;
+}
+
 @-webkit-keyframes mymove {
-  from   {left: 400px;}
+  from   {right:1100px;}
   to  {left: 0px;}
 }
 @keyframes mymove {
-    from   {left: 400px;}
-    to {left: 0px;}
+    from   {right: 1100px;}
+    to {right: 0px;}
 }
 
 /*Media Queries*/

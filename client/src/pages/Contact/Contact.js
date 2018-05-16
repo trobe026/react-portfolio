@@ -124,7 +124,7 @@ export default class Contact extends Component {
       )
     }
     return (
-      <section>
+      <div className='col-md-12'>
             <div className="row well well-lg contact">
                 <h2>Contact</h2>
                 <form>
@@ -161,7 +161,7 @@ export default class Contact extends Component {
                   <button className="btn btn-primary"  type="submit" onClick={() => this.sendToTopic()}>Send <i className="fa fa-envelope" aria-hidden="true"></i></button>
 
               </div>
-          </section>
+      </div>
         );
       }
     }

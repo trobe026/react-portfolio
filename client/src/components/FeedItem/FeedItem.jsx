@@ -7,6 +7,7 @@ export default class FeedItem extends Component {
   constructor(props) {
     super(props)
     this.handleClick = this.handleClick.bind(this)
+    console.log(props.id)
   }
 
   handleClick() {
@@ -22,7 +23,7 @@ export default class FeedItem extends Component {
   render() {
     return (
       <a
-        className='img'
+        className={'img img-' + this.props.id}
         onClick={this.handleClick}
         href={this.props.href}
         target='_blank'

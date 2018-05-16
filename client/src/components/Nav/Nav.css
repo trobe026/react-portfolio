@@ -6,7 +6,7 @@
   animation-name: toblue;
   animation-duration: 7s;
   background-color: #1D2731;
-  animation-iteration-count: 999;
+  animation-iteration-count: infinite;
   animation-delay: 2s;
   animation-direction: alternate;
   animation-timing-function: ease-out;
@@ -88,6 +88,6 @@
 
   .navbar-left {
     left: 15%;
-    position: absolute;
+    /* position: absolute; */
   }
 }

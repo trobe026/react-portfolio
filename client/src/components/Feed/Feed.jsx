@@ -36,6 +36,7 @@ export default class Feed extends Component {
             href={item.href}
             alt={item.alt}
             renderModal={this.props.renderModal}
+            id={i}
             key={i} />
         )}
         {this.props.items.length > this.state.loadedItems.length &&

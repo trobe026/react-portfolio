@@ -32,8 +32,8 @@ export default class Thanks extends Component {
       )
     }
     return(
-      <div className='row well well-lg'>
-        <h1>Thanks for the message!</h1>
+      <div className='row well well-lg thanks'>
+        <h2>Thanks for the message!</h2>
       </div>
     )
   }

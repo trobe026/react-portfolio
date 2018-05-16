@@ -23,14 +23,14 @@ componentWillUnmount() {
 
 render() {
   return (
-    <section>
+    <div className='col-md-12'>
       <div className="row well well-lg">
               <section>
                 <Feed items={PROJECTS} name="Portfolio" renderModal={renderModal}
                  />
                 </section>
               </div>
-      </section>
+      </div>
     );
   }
 }
